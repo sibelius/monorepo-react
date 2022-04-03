@@ -1,0 +1,31 @@
+{
+  "name": "monorepo-react",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.1",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "lerna": "^4.0.0",
+    "rollup-plugin-clean": "^1.0.0",
+    "rollup-plugin-dts": "^4.2.0",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "turbo": "^1.1.6",
+    "typescript": "^4.6.2"
+  },
+  "license": "UNLICENSED",
+  "packageManager": "yarn@1.22.17",
+  "private": true,
+  "scripts": {
+    "build": "yarn lerna run build --scope @monorepo/hooks --scope @monorepo/theme --scope @monorepo/ui",
+    "check-types": "yarn lerna run check-types --scope @monorepo/hooks --scope @monorepo/theme --scope @monorepo/ui",
+    "lint": "yarn lerna run lint --scope @monorepo/hooks --scope @monorepo/theme --scope @monorepo/ui",
+    "turbo:build": "turbo run build",
+    "turbo:check-types": "turbo run check-types",
+    "turbo:lint": "turbo run lint"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
